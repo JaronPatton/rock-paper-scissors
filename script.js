@@ -14,3 +14,15 @@ function computerPlay() {
             return "scissors";
     }
 }
+
+//function works but needs modified with logic for dynamic winning
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+
+    return `You Lose! ${computerSelection} beats ${playerSelection}`;
+}
+
+//test arguments to see if playRound works when called)
+const playerSelection = "rock";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
