@@ -27,6 +27,10 @@ function playRound(playerSelection, computerSelection) {
     if ((computerSelection.length - playerSelection.length) > 3) {
         return (`You Win! Your ${playerSelection} beats HAL 9000's ${computerSelection}.`);
     }
+    else if (((playerSelection.length - computerSelection.length) > 3)) {
+        return (`You Lose! HAL 9000's ${computerSelection} beats your ${playerSelection}.`);
+    }
+
     else if (computerSelection.length > playerSelection.length) {
         return (`You Lose! HAL 9000's ${computerSelection} beats your ${playerSelection}.`);
     }
