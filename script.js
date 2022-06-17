@@ -24,11 +24,19 @@ function computerPlay() {
 //playRound function works but needs modified with logic for dynamic winning
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-
-    return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    if ((computerSelection.length - playerSelection.length) > 3) {
+        console.log(`You Win! ${playerSelection} beats ${computerSelection}.`);
+    }
+    else if (computerSelection.length > playerSelection.length) {
+        console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
+    }
+    else {
+        console.log(`It's a tie! ${computerSelection} and ${playerSelection} are equal`);
+    }
 }
 
 //test arguments to see if playRound works when called)
+/*
 const playerSelection = "rock";
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));*/
