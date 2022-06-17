@@ -1,7 +1,9 @@
 //plays 5 rounds of game
 function game() {
     for (let i = 0; i < 5; i++) {
-        playRound();
+        const playerSelection = prompt("Choose your weapon: rock, paper, or scizzors.");
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
     }
 }
 
@@ -23,22 +25,19 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if ((computerSelection.length - playerSelection.length) > 3) {
-        return (`You Win! ${playerSelection} beats ${computerSelection}.`);
+        return (`You Win! Your ${playerSelection} beats HAL 9000's ${computerSelection}.`);
     }
     else if (computerSelection.length > playerSelection.length) {
-        return (`You Lose! ${computerSelection} beats ${playerSelection}.`);
+        return (`You Lose! HAL 9000's ${computerSelection} beats your ${playerSelection}.`);
     }
     else if (playerSelection.length > computerSelection.length) {
-        return (`You Win! ${playerSelection} beats ${computerSelection}.`);
+        return (`You Win! Your ${playerSelection} beats HAL 9000's ${computerSelection}.`);
     }
     else {
-        console.log(playerSelection.length);
-        console.log(computerSelection.length);
-        return (`It's a tie! ${computerSelection} and ${playerSelection} are equal`);
+        return (`It's a tie! HAL 9000's ${computerSelection} and your ${playerSelection} are a match made in Heaven! <3`);
     }
 }
 
 //set variables and log results of playing a round
-const playerSelection = prompt("Choose your weapon: rock, paper, or scizzors.");
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+
+game();
