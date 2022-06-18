@@ -1,7 +1,7 @@
 //plays 5 rounds of game
 function game() {
     for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose your weapon: rock, paper, or scizzors.");
+        const playerSelection = prompt("Choose your weapon: rock, paper, or scissors.");
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
     }
